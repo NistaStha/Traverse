@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traverse Computation Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <marquee behavior="scroll" direction="left">Traverse Computation Form</marquee>
+    </header>
+    <nav class="navbar">
+        <a href="Specification.html">Specifications</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+    <main>
+        <h1>Traverse Computation</h1>
+        <form id="traverseForm">
+            <fieldset>
+                <legend>Known Coordinates</legend>
+                <label for="knownEasting">Known Easting (m):</label>
+                <input type="number" id="knownEasting" step="0.01" required>
+                <label for="knownNorthing">Known Northing (m):</label>
+                <input type="number" id="knownNorthing" step="0.01" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Traverse Input</legend>
+                <table id="traverseTable">
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Length (m)</th>
+                            <th>Azimuth (°)</th>
+                            <th>Latitude (m)</th>
+                            <th>Departure (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AB</td>
+                            <td><input type="number" step="0.01" class="length" required></td>
+                            <td><input type="number" step="0.01" class="azimuth" required></td>
+                            <td><input type="number" step="0.01" class="latitude" readonly></td>
+                            <td><input type="number" step="0.01" class="departure" readonly></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <button type="button" id="addRow">Add Row</button>
+                <button type="button" id="submitBtn">Submit</button>
+            </fieldset>
+
+            <fieldset id="resultsSection">
+                <legend>Results</legend>
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Latitude (m)</th>
+                            <th>Departure (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                <div id="finalResults">
+                    <p>Total Latitude: <span id="totalLatitude" class="highlight">0</span> m</p>
+                    <p>Total Departure: <span id="totalDeparture" class="highlight">0</span> m</p>
+                    <p>Closing Error Latitude: <span id="closingErrorLat" class="highlight">0</span> m</p>
+                    <p>Closing Error Departure: <span id="closingErrorDep" class="highlight">0</span> m</p>
+                    <p>Adjusted Coordinates:</p>
+                    <p>Easting: <span id="easting" class="highlight">0</span> m</p>
+                    <p>Northing: <span id="northing" class="highlight">0</span> m</p>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+   
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
